@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     [SerializeField] InputAction action;
+    [SerializeField] float up = 30f;
+
     
     Rigidbody rb;
 
@@ -25,7 +27,7 @@ public class Movement : MonoBehaviour
     {
         if(action.IsPressed())
         {
-            rb.AddRelativeForce(0,30,0);
+            rb.AddRelativeForce(0,up * Time.deltaTime,0);
         }
     }
 
