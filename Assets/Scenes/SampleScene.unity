@@ -709,30 +709,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3fc65cc1b5bc54d967c323ee84d8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  action:
-    m_Name: Action
+  upAction:
+    m_Name: Up
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f17ad4ab-8c47-490a-88a1-792544a6ca29
+    m_Id: c50ed1e8-fbbc-4c86-83e9-957eda35a503
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 8b2a7459-7953-4c93-a241-17e96c330b74
+      m_Id: 8516811a-bb65-4591-a15e-e3967ce12526
       m_Path: <Keyboard>/space
-      m_Interactions: Tap,Hold
+      m_Interactions: Hold,Tap
       m_Processors: 
       m_Groups: 
-      m_Action: Action
+      m_Action: Up
       m_Flags: 0
     - m_Name: 
-      m_Id: 43003d85-49ea-4d29-9881-ab2cd9da5313
+      m_Id: c468decc-d5a3-4ba1-810b-3d4acf73e171
       m_Path: <Gamepad>/rightTrigger
+      m_Interactions: Hold,Tap
+      m_Processors: 
+      m_Groups: 
+      m_Action: Up
+      m_Flags: 0
+    m_Flags: 0
+  rotation:
+    m_Name: Rotation
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1b345cc7-c99e-4a35-964c-a70587687504
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Arrows
+      m_Id: faee4c7c-75b0-470e-8ecb-bf36ab72c0de
+      m_Path: 1DAxis
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Action
-      m_Flags: 0
+      m_Action: Rotation
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 72d1f53b-6580-4523-9093-0948709feb51
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 5dc22b88-e468-4efd-b06c-845c0272aea7
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: Wasd
+      m_Id: 0342fb03-fb69-46de-bbb2-87b93ada4610
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 0356ccc2-e3fa-4497-abae-dcec1afe2f43
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 13623fd6-a2f2-4d91-970d-d442145157ba
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: GamePad
+      m_Id: a2d58bc4-b9bc-4657-a2c5-21556629eda4
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 74f23722-c3ea-4620-9a4e-5e01adb1619a
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: d5657768-4079-478f-a076-d656ae70193e
+      m_Path: <Gamepad>/rightStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
     m_Flags: 0
   up: 3000
 --- !u!4 &1790825308
@@ -780,7 +861,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790825306}
   serializedVersion: 5
-  m_Mass: 0.5
+  m_Mass: 0.001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -797,7 +878,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!4 &2123254379 stripped
 Transform:
