@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,8 +7,8 @@ public class Movement : MonoBehaviour
     [SerializeField] InputAction upAction;
     [SerializeField] InputAction rotation;
     
-    [SerializeField] float up = 3000f;
-    [SerializeField] float leftRight = 10f;
+    [SerializeField] float upStrength = 3000f;
+    [SerializeField] float rotationStrength = 2000f;
     
     Rigidbody rb;
 
@@ -37,7 +38,7 @@ public class Movement : MonoBehaviour
     {
         if(upAction.IsPressed())
         {
-            rb.AddRelativeForce(Vector3.up * up * Time.deltaTime);
+            rb.AddRelativeForce(Vector3.up * upStrength * Time.deltaTime);
         }
     }
     private void ProcessRotation()
@@ -47,15 +48,21 @@ public class Movement : MonoBehaviour
         {
             if(rotationInput == -1)
             {
-                rb.AddRelativeForce(Vector3.left * leftRight * Time.deltaTime);
-            } else
-            {
-                rb.AddRelativeForce(Vector3.right * leftRight * Time.deltaTime);
+                ApplyRotation(Vector3.left, 1);
             }
-        
+            else
+            {
+                ApplyRotation(Vector3.right, -1);
+            }
         }
 
-
+    }
+    private void ApplyRotation(Vector3 direction, float directionRotate)
+    {
+        rb.freezeRotation = true;
+        transform.Rotate(0, 0, directionRotate);
+        rb.AddRelativeForce(direction * rotationStrength * Time.deltaTime);
+        rb.freezeRotation = false;
     }
 
 
