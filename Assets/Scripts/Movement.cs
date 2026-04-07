@@ -59,10 +59,8 @@ public class Movement : MonoBehaviour
     }
     private void ApplyRotation(Vector3 direction, float directionRotate)
     {
-        rb.freezeRotation = true;
         transform.Rotate(0, 0, directionRotate);
         rb.AddRelativeForce(direction * rotationStrength * Time.deltaTime);
-        rb.freezeRotation = false;
     }
 
 
