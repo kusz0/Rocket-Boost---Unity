@@ -13,13 +13,31 @@ public class CollisionHandler : MonoBehaviour
                 Destroy(collision.gameObject);
                 break;
             case "Finish":
-                gameObject.transform.position = new Vector3(-13.45f, 2.46f,0);
+                GoToTheNextLvl();
                 break;
             case "Evil":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                ReloadCurrentLvl();
                 break;
+        }
+        void ReloadCurrentLvl()
+        {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        void GoToTheNextLvl()
+        {
+            int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if(nextScene == SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(0);
+            }else
+            {
+                SceneManager.LoadScene(nextScene);
+            }
+
+            
         }
 
     }
-
 }
+
