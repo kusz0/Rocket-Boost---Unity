@@ -9,7 +9,11 @@ public class Movement : MonoBehaviour
     
     [SerializeField] float upStrength = 3000f;
     [SerializeField] float rotationStrength = 2000f;
-    
+
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem leftBooster;
+    [SerializeField] ParticleSystem rightBooster;
+
     Rigidbody rb;
 
 
@@ -38,7 +42,11 @@ public class Movement : MonoBehaviour
     {
         if(upAction.IsPressed())
         {
+            mainBooster.Play();
             rb.AddRelativeForce(Vector3.up * upStrength * Time.deltaTime);
+        }else
+        {
+            mainBooster.Stop();
         }
     }
     private void ProcessRotation()
@@ -48,12 +56,18 @@ public class Movement : MonoBehaviour
         {
             if(rotationInput == -1)
             {
+                leftBooster.Play();
                 ApplyRotation(Vector3.left, 1);
             }
             else
             {
+                rightBooster.Play();
                 ApplyRotation(Vector3.right, -1);
             }
+        }else
+        {
+            rightBooster.Stop();
+            leftBooster.Stop();
         }
 
     }
