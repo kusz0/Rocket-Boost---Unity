@@ -1,7 +1,10 @@
 # Rocket-Boost---Unity
 Better version of flappy bird
+
 U have to go from blue to the white landpad then ur in the next lvl
+
 type shit 
+
 project is NOT done
 
 <img width="1314" height="739" alt="Screenshot 2026-04-13 033444" src="https://github.com/user-attachments/assets/874b7bbf-9d4a-45ca-96aa-0b0bda4697ca" />
