@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &147659419038421040
+--- !u!1001 &4451031114039723578
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 52d989fc3ffe226438abaa75b261b465, type: 3}
       propertyPath: m_Name
-      value: Lanch Pad
+      value: Start Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 52d989fc3ffe226438abaa75b261b465, type: 3}
+      propertyPath: m_TagString
+      value: Respawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58,20 +62,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52d989fc3ffe226438abaa75b261b465, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8632473504598460250}
+      addedObject: {fileID: 2925782816910280359}
   m_SourcePrefab: {fileID: 100100000, guid: 52d989fc3ffe226438abaa75b261b465, type: 3}
---- !u!1 &1066788669090409825 stripped
+--- !u!1 &3532041358082685803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 52d989fc3ffe226438abaa75b261b465, type: 3}
-  m_PrefabInstance: {fileID: 147659419038421040}
+  m_PrefabInstance: {fileID: 4451031114039723578}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8632473504598460250
+--- !u!65 &2925782816910280359
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066788669090409825}
+  m_GameObject: {fileID: 3532041358082685803}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

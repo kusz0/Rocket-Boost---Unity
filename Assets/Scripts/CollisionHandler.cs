@@ -1,23 +1,25 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+
     [SerializeField] private float nextLvlDelay = 1.2f;
     [SerializeField] private float crashDelay = .7f;
  
     [SerializeField] ParticleSystem succesPatricle;
     [SerializeField] ParticleSystem crashParticle;
 
-    [SerializeField] ParticleSystem mainBooster;
-    [SerializeField] ParticleSystem leftBooster;
-    [SerializeField]ParticleSystem rightBooster;
-
 
     Movement movement;
 
 
+    private void Update()
+    {
+        RespondToDebugKeys();
+    }
 
     private void Awake()
     {
@@ -41,7 +43,14 @@ public class CollisionHandler : MonoBehaviour
 
     }
 
-            
+    void RespondToDebugKeys()
+    {
+        if(Keyboard.current.lKey.isPressed)
+        {
+            Debug.Log("dupa");
+            GoToTheNextLvl();
+        }
+    }
     void ReloadCurrentLvl()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

@@ -225,13 +225,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468c41dd430ac29468a4585c7f2806c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandler
+  loadNextLvl:
+    m_Name: Load Next Lvl
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5f04516f-5d77-42e2-bd7b-65006fa2e82a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f5192f34-e64b-4b2e-8584-be17b9a18045
+      m_Path: <Keyboard>/l
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Load Next Lvl
+      m_Flags: 0
+    m_Flags: 0
   nextLvlDelay: 0.8
   crashDelay: 0.4
   succesPatricle: {fileID: 2118209329348889138}
   crashParticle: {fileID: 2428535640922215075}
-  mainBooster: {fileID: 5036664035051164494}
-  leftBooster: {fileID: 3949617628947889837}
-  rightBooster: {fileID: 2603964335690800942}
 --- !u!82 &4106121516941413017
 AudioSource:
   m_ObjectHideFlags: 0

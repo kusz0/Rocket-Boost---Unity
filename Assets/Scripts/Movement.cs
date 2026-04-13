@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] InputAction upAction;
     [SerializeField] InputAction rotation;
-    
+
     [SerializeField] float upStrength = 3000f;
     [SerializeField] float rotationStrength = 2000f;
 
@@ -32,7 +32,6 @@ public class Movement : MonoBehaviour
         upAction.Disable();
         rotation.Disable();
     }
-
     private void FixedUpdate()
     {
         ProcessActionUp();
